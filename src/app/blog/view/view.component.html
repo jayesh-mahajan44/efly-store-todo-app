@@ -1,0 +1,53 @@
+<div
+  class="row col-6 flex-column mx-auto container shadow p-3 m-5 bg-light rounded"
+>
+  <div class="card col-12">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <div class="row justify-content-between">
+      <h5 class="card-title ml-3">{{ item?.title }}  </h5>
+      <p>{{ item?.date | date }}</p>
+    </div>
+      <hr class="my-2">
+      <p class="card-text">{{ item?.description }}</p>
+    </div>
+    
+  </div>
+  <div class="row  m-4">
+    <button
+      *ngIf="gs?.user?.isAdmin"
+      type="button"
+      class="btn1 btn btn-info m-2"
+      (click)="navigate('blog/edit', url[3])"
+    >
+      Edit Blog
+    </button>
+
+    <button type="button" class="btn1 btn btn-info px-4 m-2" (click)="like()">
+      Like {{ item.like }}
+    </button>
+    <button type="button" class="btn1 btn btn-info m-2" (click)="addComment()">
+      Add Comment
+    </button>
+    <button
+      type="button"
+      class="btn1 btn btn-info px-4 m-2"
+      (click)="navigate('blog/list')"
+    >
+      Back
+    </button>
+  </div>
+  <div class="text-center">
+ 
+    <textarea [(ngModel)]="comment" style="background: #98faf01c;"></textarea>
+    <div class="row"> 
+    <div *ngFor="let c of item?.comment" class="card col-sm-6 col-md-4 col-12">
+      <p>{{ c.commenter }}</p>
+      <p>
+        {{ c.comment }}
+      </p>
+    </div>
+  </div>
+  </div>
+  
+</div>

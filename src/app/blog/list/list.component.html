@@ -1,0 +1,27 @@
+<!-- 
+<div *ngFor = 'let item of list'  class="row col-4">
+    <div   class="border row col-4">
+        <h5>{{item.title}}</h5>
+        <p>{{item.description}}</p>
+        </div>
+    </div>> -->
+
+<div class="row">
+
+
+    <div class="card  col-sm-6 col-md-4 col-12" style="width: 18rem;"  *ngFor = 'let item of list;let i = index'>
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title text-center">{{item.title}} </h5>
+          <p><span>{{item.date|date}}</span></p>
+          <p class="card-text">{{item.description?  item.description.substring(0,50)+'...':item.description}}</p>
+        </div>
+        <div class="row justify-content-around ">
+        <button type="button" class=" col-6 col-md-4 m-1 btn btn-primary" (click) = 'navigate("blog/view",i)'>View</button>
+        <button type="button"  *ngIf = 'gs?.user?.isAdmin' class=" col-6 col-md-4 m-1 btn btn-info" (click) = 'navigate("blog/edit",i)'>Edit Blog</button>
+        <button type="button" *ngIf = 'gs?.user?.isAdmin' class=" col-6 col-md-4 m-1 btn btn-primary"  >Delete</button>
+    </div>
+    </div> 
+    
+    </div>
+   

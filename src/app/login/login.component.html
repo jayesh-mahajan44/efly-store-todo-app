@@ -1,0 +1,51 @@
+
+ 
+<div class="container width shadow mx-auto p-3 m-5 bg-light rounded" >
+    <h2>Login</h2>
+    <h5>
+      Note:
+</h5>
+<p>   1)   username & password = admin</p>
+<p>  2)   username & password = guest</p> 
+  
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="username" class="font_size"
+          ><i class="fa fa-user" aria-hidden="true"></i> Username</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="text"
+          formControlName="username"
+          placeholder="Enter username"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pwd" class="font_size">
+          <i class="fa fa-key" aria-hidden="true"></i> Password</label
+        >
+        <input
+          type="p  assword"
+          class="form-control"
+          id="pwd"
+          formControlName="password"
+          placeholder="Enter password"
+          name="pswd"
+        />
+      </div>
+     
+      <button (click)='signIn()' type="submit" class="btn btn-primary mr-3">Sign in</button>
+  
+    </form>
+
+    
+
+  </div>
+
+  
+  
+  
+    
+  

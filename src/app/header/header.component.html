@@ -1,0 +1,10 @@
+<div class="header bg-secondary">
+<h2 class="center w-100" *ngIf = 'router.url.includes("login")' style="line-height: 90px;">Blog App</h2> 
+    
+<h2 class="center w-100" *ngIf = '!router.url.includes("login")' style="line-height: 90px;">{{gs?.user?.username}} pannel</h2> 
+<div class="w-100 row justify-content-end align-content-center m-0 px-4" *ngIf = '!router.url.includes("login")'> 
+<button *ngIf = '!router.url.includes("login")' type="button" class=" btn1 mx-1 btn btn-danger" (click) = 'logOut()'>Logout</button>
+<button type="button" *ngIf = 'gs?.user?.isAdmin' class=" btn1 mx-1 btn btn-danger" (click) = 'navigate("blog/add")'>Add Blog</button>
+<button type="button" *ngIf = '!router.url.includes("login") && !router.url.includes("list")' class=" btn1 mx-1 btn btn-danger" (click) = 'navigate("blog/list")'>List Blog</button>
+</div>
+</div>
